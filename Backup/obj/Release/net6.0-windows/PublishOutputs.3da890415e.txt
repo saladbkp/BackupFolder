@@ -1,0 +1,5 @@
+C:\Users\khwon\Desktop\Backup\Backup\bin\Release\net6.0-windows\publish\Backup.exe
+C:\Users\khwon\Desktop\Backup\Backup\bin\Release\net6.0-windows\publish\Backup.dll
+C:\Users\khwon\Desktop\Backup\Backup\bin\Release\net6.0-windows\publish\Backup.deps.json
+C:\Users\khwon\Desktop\Backup\Backup\bin\Release\net6.0-windows\publish\Backup.runtimeconfig.json
+C:\Users\khwon\Desktop\Backup\Backup\bin\Release\net6.0-windows\publish\Backup.pdb

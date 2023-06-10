@@ -1,0 +1,70 @@
+﻿<Window x:Class="Backup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Backup"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1.2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="15 5 0 0" Grid.Column="0" FontSize="12" FontWeight="Bold">Local</TextBlock>
+        <TextBlock Margin="15 5 0 0" Grid.Column="1" FontSize="12" FontWeight="Bold">Server</TextBlock>
+
+        <DataGrid Name = "dg1" AutoGenerateColumns = "False" Margin="10" Grid.Column="0" Grid.Row="1">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header = "Name" Binding = "{Binding Path}" Width="2*"/>
+                <DataGridTextColumn Header = "Size" Binding = "{Binding Size}" Width="1*"/>
+                <DataGridTextColumn Header = "Time" Binding = "{Binding Time}" Width="2*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid Name = "dg2" AutoGenerateColumns = "False" Margin="10" Grid.Column="1" Grid.Row="1">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header = "Name" Binding = "{Binding Path}" Width="2*"/>
+                <DataGridTextColumn Header = "Size" Binding = "{Binding Size}" Width="1*"/>
+                <DataGridTextColumn Header = "Time" Binding = "{Binding Time}" Width="2*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid Name = "dg3" AutoGenerateColumns = "False" Margin="10" Grid.Row="2" Grid.ColumnSpan="2">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Changed}" Value="New Created">
+                            <Setter Property="Background" Value="lime"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Changed}" Value="File Modified">
+                            <Setter Property="Background" Value="Orange"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Changed}" Value="File Deleted">
+                            <Setter Property="Background" Value="LightPink"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header = "Name" Binding = "{Binding Name}" Width="2*"/>
+                <DataGridTextColumn Header = "Changed" Binding = "{Binding Changed}" Width="1*"/>
+                <DataGridTextColumn Header = "Time" Binding = "{Binding Time}" Width="2*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="3">
+            <Button Margin="25 0 25 0" Width="80" Content="Sync" Name="sync" Click="sync_Click"/>
+            <Button Margin="25 0 25 0" Width="80" Content="Save File" Name="save" Click="save_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

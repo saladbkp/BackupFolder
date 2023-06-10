@@ -1,0 +1,3 @@
+ServerPath = C:\\Users\\khwon\\Desktop\\test1
+LocalPath = C:\\Users\\khwon\\Desktop\\test2
+BackupPath = C:\\Users\\khwon\\Desktop\\test3
